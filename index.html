@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Music Nexus - Découvrez mes morceaux préférés avec une interface moderne et accessible.">
+    <title>Music Nexus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header id="top">
+        <h1>🎵 Music Nexus</h1>
+        <p>Explorez mes morceaux préférés avec style et simplicité.</p>
+    </header>
+
+    <!-- Contenu principal -->
+    <main id="music-list">
+        <!-- Les musiques sont générées dynamiquement avec JavaScript -->
+    </main>
+
+    <!-- Formulaire pour ajouter une musique -->
+    <div id="add-music-form" class="hidden">
+        <form id="musicForm">
+            <h2>Ajouter une musique</h2>
+            <label for="title">Titre de la musique :</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="image">Lien de l'image :</label>
+            <input type="url" id="image" name="image" required>
+
+            <label for="audio">Lien de l'audio :</label>
+            <input type="url" id="audio" name="audio" required>
+
+            <label for="deezer">Lien Deezer :</label>
+            <input type="url" id="deezer" name="deezer" required>
+
+            <label for="spotify">Lien Spotify :</label>
+            <input type="url" id="spotify" name="spotify" required>
+
+            <button type="submit">Ajouter</button>
+            <button type="button" id="closeForm">Fermer</button>
+        </form>
+    </div>
+
+    <button id="openForm">Ajouter une musique</button>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Music Nexus - Partagez vos morceaux préférés avec le monde.</p>
+            <p>
+                <a href="https://twitter.com" target="_blank">Twitter</a> | 
+                <a href="https://facebook.com" target="_blank">Facebook</a> | 
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </p>
+            <p>
+                <a href="#top">Revenir en haut</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Données JSON intégrées -->
+    <script type="application/json" id="music-data">
+    {
+        "albums": [
+            {
+                "title": "Healing",
+                "description": "Un morceau inspirant de Clarx et Moe Aly, j'ai mis cette musique car je l'adore. J'aime les musiques de style électro et le drop de la musique est incroyable, ça donne une très bonne ambiance pour s'amuser dessus ou se motiver.",
+                "image": "images/healing.jfif",
+                "audio": "audios/healing.mp3",
+                "deezer": "https://www.deezer.com/search/healing%20clarx%20moe%20aly",
+                "spotify": "https://open.spotify.com/search/healing%20clarx%20moe%20aly"
+            },
+            {
+                "title": "Stars in my Eyes",
+                "description": "Un mélange parfait de DJSM, Lena Sue et Bastique, avec une mélodie captivante et un rythme entraînant, j'aime bien l'écouter quand je vais travailler ou faire du sport, les basses sont sympa et je trouve que c'est une bonne musique motivante.",
+                "image": "images/stars-in-my-eyes.jpg",
+                "audio": "audios/stars-in-my-eyes.mp3",
+                "deezer": "https://www.deezer.com/search/stars%20in%20my%20eyes",
+                "spotify": "https://open.spotify.com/search/stars%20in%20my%20eyes"
+            },
+            {
+                "title": "ET",
+                "description": "Une ambiance futuriste avec Quattroteque, l'ambiance est incroyable, des le début on a un drop de la musique et c'est génial. Quand on l'écoute on se croirait transporter dans une autre dimension, la musique est vraiment incroyable.",
+                "image": "images/e-t.jfif",
+                "audio": "audios/e-t.mp3",
+                "deezer": "https://www.deezer.com/search/ET%20Quattroteque",
+                "spotify": "https://open.spotify.com/search/ET%20Quattroteque"
+            },
+            {
+                "title": "Sunflower",
+                "description": "Un morceau légendaire de Post Malone qui reste intemporel, la musique utiliser dans le film spiderman est incroyable, elle donne une bonne vibe puis elle plait à un bon grand monde.",
+                "image": "images/sunflower.jpg",
+                "audio": "audios/sunflower.mp3",
+                "deezer": "https://www.deezer.com/search/sunflower%20post%20malone",
+                "spotify": "https://open.spotify.com/search/sunflower%20post%20malone"
+            },
+            {
+                "title": "Heartbeat",
+                "description": "Hearbeat une  musique qui a un rythme rapide et dynamique, idéal pour se motiver, avec beaucoup de drop et des bonnes basses, super musique pour se motiver à faire du sport ou pour se focaliser sur une tâche quand on est très peu motiver.",
+                "image": "images/heartbeat.jpg",
+                "audio": "audios/heartbeat.mp3",
+                "deezer": "https://www.deezer.com/search/heartbeat%20sped-o",
+                "spotify": "https://open.spotify.com/search/heartbeat%20sped-o"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Script JS -->
+    <script src="script.js" defer></script>
+</body>
+</html>

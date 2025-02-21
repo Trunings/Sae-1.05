@@ -1,0 +1,188 @@
+// <!DOCTYPE html>
+// <html lang="fr">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <meta name="description" content="Music Nexus - Découvrez mes morceaux préférés avec style.">
+//     <title>Music Nexus</title>
+//     <link rel="stylesheet" href="style.css">
+// </head>
+// <body>
+//     <!-- En-tête -->
+//     <header>
+//         <h1>🎵 Music Nexus</h1>
+//         <p>Explorez mes morceaux préférés avec style.</p>
+//     </header>
+
+//     <!-- Contenu principal -->
+//     <main id="music-list">
+//         <!-- Les musiques seront chargées dynamiquement ici -->
+//     </main>
+
+//     <!-- Pied de page -->
+//     <footer>
+//         <div class="footer-content">
+//             <p>© 2025 Music Nexus - Créé avec passion pour partager les meilleures musiques.</p>
+//             <p>
+//                 <a href="#music-list">Revenir en haut</a>
+//             </p>
+//         </div>
+//     </footer>
+
+//     <!-- Données JSON intégrées -->
+//     <script type="application/json" id="music-data">
+//     {
+//         "albums": [
+//             {
+//                 "title": "Healing",
+//                 "description": "Un morceau inspirant de Clarx et Moe Aly, parfait pour se détendre après une journée chargée.",
+//                 "image": "healing.jpg",
+//                 "audio": "healing.mp3",
+//                 "deezer": "https://www.deezer.com/search/healing%20clarx%20moe%20aly",
+//                 "spotify": "https://open.spotify.com/search/healing%20clarx%20moe%20aly"
+//             },
+//             {
+//                 "title": "Stars in my Eyes",
+//                 "description": "Un mélange parfait de DJSM, Lena Sue et Bastique, avec une mélodie captivante et un rythme entraînant.",
+//                 "image": "stars-in-my-eyes.jpg",
+//                 "audio": "stars-in-my-eyes.mp3",
+//                 "deezer": "https://www.deezer.com/search/stars%20in%20my%20eyes",
+//                 "spotify": "https://open.spotify.com/search/stars%20in%20my%20eyes"
+//             },
+//             {
+//                 "title": "ET",
+//                 "description": "Une ambiance futuriste avec Quattroteque qui transporte dans une autre dimension.",
+//                 "image": "et.jpg",
+//                 "audio": "et.mp3",
+//                 "deezer": "https://www.deezer.com/search/ET%20Quattroteque",
+//                 "spotify": "https://open.spotify.com/search/ET%20Quattroteque"
+//             },
+//             {
+//                 "title": "Sunflower",
+//                 "description": "Un morceau légendaire de Post Malone qui reste intemporel.",
+//                 "image": "sunflower.jpg",
+//                 "audio": "sunflower.mp3",
+//                 "deezer": "https://www.deezer.com/search/sunflower%20post%20malone",
+//                 "spotify": "https://open.spotify.com/search/sunflower%20post%20malone"
+//             },
+//             {
+//                 "title": "Heartbeat",
+//                 "description": "Un rythme rapide et dynamique de SPED-O, idéal pour se motiver.",
+//                 "image": "heartbeat.jpg",
+//                 "audio": "heartbeat.mp3",
+//                 "deezer": "https://www.deezer.com/search/heartbeat%20sped-o",
+//                 "spotify": "https://open.spotify.com/search/heartbeat%20sped-o"
+//             }
+//         ]
+//     }
+//     </script>
+
+//     <!-- Script JS -->
+//     <script src="script.js" defer></script>
+// </body>
+// </html>
+
+
+/* Corps */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #000;
+}
+
+/* En-tête */
+header {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Musique */
+.music-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1db954; /* Vert Spotify */
+    padding: 20px;
+    margin: 0;
+    position: relative;
+    height: 100vh;
+}
+
+.music-item img {
+    width: 60%;
+    max-height: 50vh;
+    object-fit: cover;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.music-item h2 {
+    margin: 10px 0;
+}
+
+.music-item audio {
+    margin-top: 10px;
+}
+
+/* Ligne de séparation entre les musiques */
+.music-separator {
+    height: 10px;
+    background-color: #000; /* Noir pour séparer */
+    margin: 0;
+}
+
+/* Pied de page */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-content a {
+    color: #1db954;
+    text-decoration: none;
+}
+
+footer .footer-content a:hover {
+    text-decoration: underline;
+}
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const musicData = JSON.parse(document.getElementById("music-data").textContent).albums;
+//     const musicList = document.getElementById("music-list");
+
+//     // Ajouter les musiques dynamiquement
+//     musicData.forEach((album, index) => {
+//         const musicItem = document.createElement("section");
+//         musicItem.className = "music-item";
+
+//         musicItem.innerHTML = `
+//             <img src="${album.image}" alt="${album.title}">
+//             <h2>${album.title}</h2>
+//             <p>${album.description}</p>
+//             <audio controls>
+//                 <source src="${album.audio}" type="audio/mp3">
+//             </audio>
+//             <p>
+//                 <a href="${album.deezer}" target="_blank">Écouter sur Deezer</a> | 
+//                 <a href="${album.spotify}" target="_blank">Écouter sur Spotify</a>
+//             </p>
+//         `;
+//         musicList.appendChild(musicItem);
+
+//         // Ajouter une ligne noire si ce n'est pas la dernière musique
+//         if (index < musicData.length - 1) {
+//             const separator = document.createElement("div");
+//             separator.className = "music-separator";
+//             musicList.appendChild(separator);
+//         }
+//     });
+// });
